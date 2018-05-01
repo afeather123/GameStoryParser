@@ -24,6 +24,11 @@ namespace StoryParser
         private Messenger finishInteractionMessenger = new Messenger();
         private SubscriptionService finishInteractionSubscriptionService;
         private Dictionary<string, SubscriptionSystem<object>> dataSubscriptions = new Dictionary<string, SubscriptionSystem<object>>();
+        private Action<FilePath[]> loadFunction;
+
+        public  SetAssetLoadFunction(Action<FilePath[]> callback) {
+            loadFunction = callback;
+        }
 
         public Subscription SubscribeToData(string dataName, Action<System.Object> callback)
         {

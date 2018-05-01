@@ -5,7 +5,7 @@
     {
         public Redirect[] entryPoints;
         public Node[] nodes;
-
+        public FilePath[] assetPaths;
     }
 
 }
